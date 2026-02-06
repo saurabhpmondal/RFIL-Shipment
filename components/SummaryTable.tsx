@@ -56,34 +56,34 @@ export const SummaryTable: React.FC<Props> = ({ data }) => {
           <thead className="bg-gray-100">
             <tr>
               <th className="px-4 py-3 text-left font-bold text-gray-600">FC</th>
-              <th className="px-4 py-3 text-right font-bold text-gray-600">Total Stock</th>
-              <th className="px-4 py-3 text-right font-bold text-gray-600">Total Sale</th>
-              <th className="px-4 py-3 text-right font-bold text-gray-600">DRR</th>
-              <th className="px-4 py-3 text-right font-bold text-gray-600">Actual Shipment Qty</th>
-              <th className="px-4 py-3 text-right font-bold text-green-700 bg-green-50 border-l border-green-100">Shipment Qty (Allocated)</th>
-              <th className="px-4 py-3 text-right font-bold text-red-700 bg-red-50 border-l border-red-100">Recall Qty</th>
+              <th className="px-4 py-3 text-center font-bold text-gray-600">Total Stock</th>
+              <th className="px-4 py-3 text-center font-bold text-gray-600">Total Sale</th>
+              <th className="px-4 py-3 text-center font-bold text-gray-600">DRR</th>
+              <th className="px-4 py-3 text-center font-bold text-gray-600">Actual Shipment Qty</th>
+              <th className="px-4 py-3 text-center font-bold text-green-700 bg-green-50 border-l border-green-100">Shipment Qty (Allocated)</th>
+              <th className="px-4 py-3 text-center font-bold text-red-700 bg-red-50 border-l border-red-100">Recall Qty</th>
             </tr>
           </thead>
           <tbody className="bg-white divide-y divide-gray-200">
             {summary.map((row) => (
               <tr key={row.fc} className="hover:bg-gray-50">
                 <td className="px-4 py-3 font-medium text-gray-900">{row.fc}</td>
-                <td className="px-4 py-3 text-right text-gray-600">{row.totalStock}</td>
-                <td className="px-4 py-3 text-right text-gray-600">{row.totalSale}</td>
-                <td className="px-4 py-3 text-right text-gray-600">{row.drr.toFixed(2)}</td>
-                <td className="px-4 py-3 text-right text-gray-600 font-medium">{row.actualShipmentQty}</td>
-                <td className="px-4 py-3 text-right font-bold text-green-700 bg-green-50 border-l border-green-100">{row.allocatedQty}</td>
-                <td className="px-4 py-3 text-right font-bold text-red-700 bg-red-50 border-l border-red-100">{row.recallQty}</td>
+                <td className="px-4 py-3 text-center text-gray-600">{row.totalStock}</td>
+                <td className="px-4 py-3 text-center text-gray-600">{row.totalSale}</td>
+                <td className="px-4 py-3 text-center text-gray-600">{row.drr.toFixed(2)}</td>
+                <td className="px-4 py-3 text-center text-gray-600 font-medium">{row.actualShipmentQty}</td>
+                <td className="px-4 py-3 text-center font-bold text-green-700 bg-green-50 border-l border-green-100">{row.allocatedQty}</td>
+                <td className="px-4 py-3 text-center font-bold text-red-700 bg-red-50 border-l border-red-100">{row.recallQty}</td>
               </tr>
             ))}
             <tr className="bg-gray-100 font-bold border-t-2 border-gray-300">
                  <td className="px-4 py-3 text-gray-900">GRAND TOTAL</td>
-                 <td className="px-4 py-3 text-right text-gray-900">{grandTotal.totalStock}</td>
-                 <td className="px-4 py-3 text-right text-gray-900">{grandTotal.totalSale}</td>
-                 <td className="px-4 py-3 text-right text-gray-900">{grandTotal.drr.toFixed(2)}</td>
-                 <td className="px-4 py-3 text-right text-gray-900">{grandTotal.actualShipmentQty}</td>
-                 <td className="px-4 py-3 text-right text-green-800 bg-green-100 border-l border-green-200">{grandTotal.allocatedQty}</td>
-                 <td className="px-4 py-3 text-right text-red-800 bg-red-100 border-l border-red-200">{grandTotal.recallQty}</td>
+                 <td className="px-4 py-3 text-center text-gray-900">{grandTotal.totalStock}</td>
+                 <td className="px-4 py-3 text-center text-gray-900">{grandTotal.totalSale}</td>
+                 <td className="px-4 py-3 text-center text-gray-900">{grandTotal.drr.toFixed(2)}</td>
+                 <td className="px-4 py-3 text-center text-gray-900">{grandTotal.actualShipmentQty}</td>
+                 <td className="px-4 py-3 text-center text-green-800 bg-green-100 border-l border-green-200">{grandTotal.allocatedQty}</td>
+                 <td className="px-4 py-3 text-center text-red-800 bg-red-100 border-l border-red-200">{grandTotal.recallQty}</td>
             </tr>
           </tbody>
         </table>

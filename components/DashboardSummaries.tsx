@@ -71,14 +71,14 @@ export const DashboardSummaries: React.FC<Props> = ({ data, mpName }) => {
             <thead>
               <tr className="bg-gray-50">
                 <th className="text-left py-2 px-2">FC</th>
-                <th className="text-right py-2 px-2">Total Stock</th>
+                <th className="text-center py-2 px-2">Total Stock</th>
               </tr>
             </thead>
             <tbody>
               {fcStockSummary.map(s => (
                 <tr key={s.fc} className="border-t border-gray-100">
                   <td className="py-1 px-2">{s.fc}</td>
-                  <td className="text-right py-1 px-2 font-medium">{s.total}</td>
+                  <td className="text-center py-1 px-2 font-medium">{s.total}</td>
                 </tr>
               ))}
             </tbody>
@@ -94,18 +94,18 @@ export const DashboardSummaries: React.FC<Props> = ({ data, mpName }) => {
             <thead>
               <tr className="bg-gray-50">
                 <th className="text-left py-2 px-2">FC</th>
-                <th className="text-right py-2 px-2">Sale</th>
-                <th className="text-right py-2 px-2">DRR</th>
-                <th className="text-right py-2 px-2">Cover</th>
+                <th className="text-center py-2 px-2">Sale</th>
+                <th className="text-center py-2 px-2">DRR</th>
+                <th className="text-center py-2 px-2">Cover</th>
               </tr>
             </thead>
             <tbody>
               {fcSalesSummary.map(s => (
                 <tr key={s.fc} className="border-t border-gray-100">
                   <td className="py-1 px-2">{s.fc}</td>
-                  <td className="text-right py-1 px-2">{s.sale}</td>
-                  <td className="text-right py-1 px-2">{s.drr.toFixed(1)}</td>
-                  <td className="text-right py-1 px-2 font-medium">{s.cover}</td>
+                  <td className="text-center py-1 px-2">{s.sale}</td>
+                  <td className="text-center py-1 px-2">{s.drr.toFixed(1)}</td>
+                  <td className="text-center py-1 px-2 font-medium">{s.cover}</td>
                 </tr>
               ))}
             </tbody>
@@ -121,16 +121,16 @@ export const DashboardSummaries: React.FC<Props> = ({ data, mpName }) => {
             <thead>
               <tr className="bg-gray-50">
                 <th className="text-left py-2 px-2">SKU</th>
-                <th className="text-right py-2 px-2">Sale</th>
-                <th className="text-right py-2 px-2">DRR</th>
+                <th className="text-center py-2 px-2">Sale</th>
+                <th className="text-center py-2 px-2">DRR</th>
               </tr>
             </thead>
             <tbody>
               {topSkus.map(s => (
                 <tr key={s.sku} className="border-t border-gray-100">
                   <td className="py-1 px-2 text-xs">{s.sku}</td>
-                  <td className="text-right py-1 px-2">{s.sale}</td>
-                  <td className="text-right py-1 px-2">{s.drr.toFixed(1)}</td>
+                  <td className="text-center py-1 px-2">{s.sale}</td>
+                  <td className="text-center py-1 px-2">{s.drr.toFixed(1)}</td>
                 </tr>
               ))}
             </tbody>
@@ -146,16 +146,16 @@ export const DashboardSummaries: React.FC<Props> = ({ data, mpName }) => {
             <thead>
               <tr className="bg-gray-50">
                 <th className="text-left py-2 px-2">Style</th>
-                <th className="text-right py-2 px-2">Sale</th>
-                <th className="text-right py-2 px-2">DRR</th>
+                <th className="text-center py-2 px-2">Sale</th>
+                <th className="text-center py-2 px-2">DRR</th>
               </tr>
             </thead>
             <tbody>
               {topStyles.map(s => (
                 <tr key={s.style} className="border-t border-gray-100">
                   <td className="py-1 px-2 text-xs">{s.style}</td>
-                  <td className="text-right py-1 px-2">{s.sale}</td>
-                  <td className="text-right py-1 px-2">{s.drr.toFixed(1)}</td>
+                  <td className="text-center py-1 px-2">{s.sale}</td>
+                  <td className="text-center py-1 px-2">{s.drr.toFixed(1)}</td>
                 </tr>
               ))}
             </tbody>

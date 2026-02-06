@@ -36,13 +36,13 @@ export const PlanningTable: React.FC<Props> = ({ data, type }) => {
               <th className="px-3 py-3 text-left font-bold text-gray-600 uppercase tracking-wider">Style</th>
               <th className="px-3 py-3 text-left font-bold text-gray-600 uppercase tracking-wider">SKU</th>
               <th className="px-3 py-3 text-left font-bold text-gray-600 uppercase tracking-wider">FC</th>
-              <th className="px-3 py-3 text-right font-bold text-gray-600 uppercase tracking-wider">Sale Qty</th>
-              <th className="px-3 py-3 text-right font-bold text-gray-600 uppercase tracking-wider">DRR</th>
-              <th className="px-3 py-3 text-right font-bold text-gray-600 uppercase tracking-wider">FC Stock</th>
-              <th className="px-3 py-3 text-right font-bold text-gray-600 uppercase tracking-wider">Cover</th>
-              <th className="px-3 py-3 text-right font-bold text-gray-600 uppercase tracking-wider">Actual Shipment Qty</th>
-              <th className="px-3 py-3 text-right font-bold text-green-700 bg-green-50 uppercase tracking-wider border-l border-green-100">Shipment Qty</th>
-              <th className="px-3 py-3 text-right font-bold text-red-700 bg-red-50 uppercase tracking-wider border-l border-red-100">Recall Qty</th>
+              <th className="px-3 py-3 text-center font-bold text-gray-600 uppercase tracking-wider">Sale Qty</th>
+              <th className="px-3 py-3 text-center font-bold text-gray-600 uppercase tracking-wider">DRR</th>
+              <th className="px-3 py-3 text-center font-bold text-gray-600 uppercase tracking-wider">FC Stock</th>
+              <th className="px-3 py-3 text-center font-bold text-gray-600 uppercase tracking-wider">Cover</th>
+              <th className="px-3 py-3 text-center font-bold text-gray-600 uppercase tracking-wider">Actual Shipment Qty</th>
+              <th className="px-3 py-3 text-center font-bold text-green-700 bg-green-50 uppercase tracking-wider border-l border-green-100">Shipment Qty</th>
+              <th className="px-3 py-3 text-center font-bold text-red-700 bg-red-50 uppercase tracking-wider border-l border-red-100">Recall Qty</th>
               <th className="px-3 py-3 text-center font-bold text-gray-600 uppercase tracking-wider">Action</th>
               <th className="px-3 py-3 text-left font-bold text-gray-600 uppercase tracking-wider">Remarks</th>
             </tr>
@@ -53,17 +53,17 @@ export const PlanningTable: React.FC<Props> = ({ data, type }) => {
                 <td className="px-3 py-2 whitespace-nowrap text-gray-900 font-medium">{row.styleId}</td>
                 <td className="px-3 py-2 whitespace-nowrap text-gray-500 text-xs">{row.sku}</td>
                 <td className="px-3 py-2 whitespace-nowrap text-gray-500">{row.fc}</td>
-                <td className="px-3 py-2 text-right whitespace-nowrap text-gray-500">{row.sales30d}</td>
-                <td className="px-3 py-2 text-right whitespace-nowrap text-gray-500">{row.drr}</td>
-                <td className="px-3 py-2 text-right whitespace-nowrap text-gray-500">{row.fcStock}</td>
-                <td className={`px-3 py-2 text-right whitespace-nowrap font-medium ${
+                <td className="px-3 py-2 text-center whitespace-nowrap text-gray-500">{row.sales30d}</td>
+                <td className="px-3 py-2 text-center whitespace-nowrap text-gray-500">{row.drr}</td>
+                <td className="px-3 py-2 text-center whitespace-nowrap text-gray-500">{row.fcStock}</td>
+                <td className={`px-3 py-2 text-center whitespace-nowrap font-medium ${
                   row.stockCover < 45 ? 'text-red-600' : row.stockCover > 60 ? 'text-yellow-600' : 'text-green-600'
                 }`}>
                   {row.stockCover}
                 </td>
-                <td className="px-3 py-2 text-right whitespace-nowrap font-medium text-gray-500">{row.actualShipmentQty}</td>
-                <td className="px-3 py-2 text-right whitespace-nowrap font-bold text-green-700 bg-green-50 border-l border-green-100">{row.allocatedQty}</td>
-                <td className="px-3 py-2 text-right whitespace-nowrap text-red-700 bg-red-50 border-l border-red-100">{row.recallQty}</td>
+                <td className="px-3 py-2 text-center whitespace-nowrap font-medium text-gray-500">{row.actualShipmentQty}</td>
+                <td className="px-3 py-2 text-center whitespace-nowrap font-bold text-green-700 bg-green-50 border-l border-green-100">{row.allocatedQty}</td>
+                <td className="px-3 py-2 text-center whitespace-nowrap text-red-700 bg-red-50 border-l border-red-100">{row.recallQty}</td>
                 <td className="px-3 py-2 text-center whitespace-nowrap">
                   <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${
                     row.action === 'SHIP' ? 'bg-green-100 text-green-800' : 
