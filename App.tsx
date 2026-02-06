@@ -8,17 +8,27 @@ import { DashboardSummaries } from './components/DashboardSummaries';
 
 function App() {
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
   const [data, setData] = useState<{ allPlans: PlanningRow[] } | null>(null);
   const [activeTab, setActiveTab] = useState<string>(MP.AMAZON);
 
   useEffect(() => {
     const init = async () => {
       try {
+        setLoading(true);
+        setError(null);
         const raw = await fetchAndNormalizeData();
+        
+        // Basic validation before processing
+        if (raw.sales.length === 0) {
+           throw new Error("Sales data is empty. Please check the 'Sale 30D' sheet.");
+        }
+
         const allPlans = calculateAllPlans(raw.sales, raw.fcStock, raw.uniwareStock, raw.remarks);
         setData({ allPlans });
-      } catch (e) {
+      } catch (e: any) {
         console.error("Failed to load data", e);
+        setError(e.message || "An unexpected error occurred while loading data.");
       } finally {
         setLoading(false);
       }
@@ -45,6 +55,28 @@ function App() {
     );
   }
 
+  if (error) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-gray-50 p-4">
+        <div className="bg-white p-8 rounded-lg shadow-lg max-w-2xl w-full border-l-4 border-red-500">
+            <h2 className="text-2xl font-bold text-red-600 mb-4">Data Loading Error</h2>
+            <div className="bg-red-50 p-4 rounded text-red-800 font-mono text-sm whitespace-pre-wrap">
+              {error}
+            </div>
+            <p className="mt-4 text-gray-600">
+              Please verify that the Google Sheets are published correctly (File > Share > Publish to web > CSV) and the column headers match the requirements.
+            </p>
+            <button 
+              onClick={() => window.location.reload()} 
+              className="mt-6 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors"
+            >
+              Retry
+            </button>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-gray-100 p-8 font-sans">
       <div className="max-w-7xl mx-auto">
@@ -54,7 +86,7 @@ function App() {
         </div>
 
         {/* Tabs */}
-        <div className="border-b border-gray-200 mb-6">
+        <div className="border-b border-gray-200 mb-6 overflow-x-auto">
           <nav className="-mb-px flex space-x-8">
             {[MP.AMAZON, MP.FLIPKART, MP.MYNTRA, MP.SELLER].map((mp) => (
               <button

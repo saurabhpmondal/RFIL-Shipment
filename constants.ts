@@ -7,12 +7,13 @@ export const FALLBACK_FCS: Record<string, string[]> = {
   [MP.MYNTRA]: ['Bangalore', 'Mumbai', 'Bilaspur'],
 };
 
-// Placeholder URLs for demo purposes
+// Live Google Sheets CSV Publish Links
+// Base ID: 2PACX-1vRarC7jnt04o-cSMEJN-h3nrbNyhgd-JCoxy6B0oDwwlX09SLQjB4kMJIOkeLRXy9RId28iJjbTd8Tm
 export const DEFAULT_SHEET_URLS = {
-  sales30d: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT1.../pub?output=csv',
-  fcStock: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT2.../pub?output=csv',
-  uniwareStock: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT3.../pub?output=csv',
-  remarks: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT4.../pub?output=csv'
+  sales30d: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRarC7jnt04o-cSMEJN-h3nrbNyhgd-JCoxy6B0oDwwlX09SLQjB4kMJIOkeLRXy9RId28iJjbTd8Tm/pub?gid=1268196089&single=true&output=csv',
+  fcStock: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRarC7jnt04o-cSMEJN-h3nrbNyhgd-JCoxy6B0oDwwlX09SLQjB4kMJIOkeLRXy9RId28iJjbTd8Tm/pub?gid=2046154602&single=true&output=csv',
+  uniwareStock: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRarC7jnt04o-cSMEJN-h3nrbNyhgd-JCoxy6B0oDwwlX09SLQjB4kMJIOkeLRXy9RId28iJjbTd8Tm/pub?gid=535319358&single=true&output=csv',
+  remarks: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRarC7jnt04o-cSMEJN-h3nrbNyhgd-JCoxy6B0oDwwlX09SLQjB4kMJIOkeLRXy9RId28iJjbTd8Tm/pub?gid=998019043&single=true&output=csv'
 };
 
 export const UNIWARE_ALLOCATION_CAP = 0.40;
